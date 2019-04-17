@@ -6,6 +6,7 @@ import java.util.Date
 
 import com.alibaba.fastjson.JSON
 import com.atguigu.gmall1015.dw.common.constant.GmallConstant
+import com.atguigu.gmall1015.dw.common.util.MyEsUtil
 import com.atguigu.gmall1015.dw.realtime.bean.StartupLog
 import com.atguigu.gmall1015.dw.realtime.util.MyKafkaUtil
 import org.apache.kafka.clients.consumer.ConsumerRecord
@@ -76,9 +77,14 @@ object DauApp {
         // 设计 redis保存的key     key: dau:2019-04-15 value( set )  uid    命令： sadd
         list.foreach{startupLog=>
           val key="dau:"+startupLog.logDate
-          jedis.sadd(key,startupLog.uid).
+          jedis.sadd(key,startupLog.uid)
         }
         jedis.close()
+
+        MyEsUtil.insertEsBulk(GmallConstant.ES_INDEX_DAU,list)
+
+
+
       }
 
     }
