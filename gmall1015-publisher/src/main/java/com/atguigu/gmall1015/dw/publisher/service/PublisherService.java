@@ -8,6 +8,10 @@ public interface PublisherService {
 
     public Map getDauMap(String date);
 
+    public Double  getOrderTotalAmount(String date);
 
+    public Map  getOrderTotalAmountHourMap(String date);
+
+    public Map  getSaleDetail(String date,String keyword,int startPage,int pagesize,String aggField,int aggSize);
 
 }

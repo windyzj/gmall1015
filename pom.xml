@@ -13,6 +13,8 @@
         <module>gmall1015-mock</module>
         <module>gmall1015-logger</module>
         <module>gmall1015-realtime</module>
+        <module>gmall1015-canal</module>
+        <module>gmall1015-hive2es</module>
     </modules>
 
     <parent>

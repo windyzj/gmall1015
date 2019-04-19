@@ -12,8 +12,8 @@
     <artifactId>gmall1015-canal</artifactId>
 <dependencies>
     <dependency>
-        <groupId>com.atguigu.gmall2019.dw</groupId>
-        <artifactId>dw-common</artifactId>
+        <groupId>com.atguigu.gmall1015.dw</groupId>
+        <artifactId>gmall1015-common</artifactId>
         <version>1.0-SNAPSHOT</version>
     </dependency>
 
